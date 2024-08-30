@@ -22,6 +22,7 @@ find_package(yaml_cpp_vendor REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_typesupport_cpp REQUIRED)
 find_package(rosidl_typesupport_introspection_cpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 add_library(quickplot
   src/introspection.cpp
@@ -34,7 +35,8 @@ ament_target_dependencies(quickplot
   yaml_cpp_vendor
   std_msgs
   rosidl_typesupport_cpp
-  rosidl_typesupport_introspection_cpp)
+  rosidl_typesupport_introspection_cpp
+  geometry_msgs)
 
 add_executable(quickplot_bin src/main.cpp)
 set_target_properties(quickplot_bin PROPERTIES OUTPUT_NAME "quickplot")
@@ -53,7 +55,6 @@ if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   ament_lint_auto_find_test_dependencies()
   find_package(ament_cmake_gmock REQUIRED)
-  find_package(geometry_msgs REQUIRED)
   find_package(vision_msgs REQUIRED)
 
   ament_add_gmock(test_introspection test/test_introspection.cpp)

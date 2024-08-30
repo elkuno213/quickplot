@@ -16,11 +16,11 @@
   <depend>rosidl_typesupport_introspection_cpp</depend>
   <depend>boost</depend>
   <depend>libstatistics_collector</depend>
+  <depend>geometry_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
   <test_depend>ament_cmake_gmock</test_depend>
-  <test_depend>geometry_msgs</test_depend>
   <test_depend>vision_msgs</test_depend>
 
   <export>
