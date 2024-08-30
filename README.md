@@ -15,8 +15,9 @@ ros2 run quickplot quickplot [config.yaml] [--ros-args -p use_sim_time:=true]
 
 Plot config files are intended to be hand-written and source-controlled as part of a ROS project, same as Rviz configuration.
 
-```
+```yaml
 # example to plot speed and angular velocity of a Twist message on two axes
+history_length: 50
 plots:
   - axes:
       - y_min: -2
@@ -55,5 +56,5 @@ To test GUI features, use the scripts in `test` to publish example data.
 * `test/publish_sim_twist.py` publishes velocity in sim time, and a sim time clock; the application should display a warning if launched with `use_sim_time:=false`
 
 * `test/publish_real_twist.py` publishes velocity in real time, and a sim time clock; the application should display a warning if launched with `use_sim_time:=true`
-* 
+*
 * `test/unknown_type` contains a Dockerfile to build an image with a message type unknown to the host system, quickplot should display a warning about a missing message type
